@@ -5,7 +5,7 @@ const resolve = pathName => path.join(__dirname, pathName)
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-    base: isProd ? '/docs/' : '/',
+    base: isProd ? '/' : '/',
     dest: 'docs',
     title: "大海前端团队",
     description: 'DHFE_大海前端团队_只是一群热爱技术又爱玩的人在写好用的文章',

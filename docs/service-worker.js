@@ -21,15 +21,15 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "cf7b30601219ce0fbd83055cb4672b1d"
+    "revision": "1c4eb8c7952bd174633743367c049a09"
   },
   {
     "url": "about/index.html",
-    "revision": "78928314b7ea2588e09d2a3f3800a0d6"
+    "revision": "de3d38016eb16cdbd4a9873a6f909360"
   },
   {
-    "url": "assets/css/styles.e4483581.css",
-    "revision": "914f70e01a3d502be5e048e9ac935105"
+    "url": "assets/css/styles.e784fddd.css",
+    "revision": "ebd97ce75170eeca2544ad4841aa39b5"
   },
   {
     "url": "assets/fonts/fa-brands-400.030846b7.woff",
@@ -180,12 +180,12 @@ self.__precacheManifest = [
     "revision": "92c2e806ae7f708c2bc3e2c937a1de6e"
   },
   {
-    "url": "assets/js/app.e4483581.js",
-    "revision": "f3488ba1ed27db2bb76eb39c66b78253"
+    "url": "assets/js/app.e784fddd.js",
+    "revision": "f15cc8cd678c90cc07317cec9d1a8f85"
   },
   {
     "url": "blog/index.html",
-    "revision": "b9fdef56c16899375d660f69f0bd7c54"
+    "revision": "d018be43f8c4dc3a67d78f1af71edbf6"
   },
   {
     "url": "face.jpg",
@@ -205,19 +205,19 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "31b923c7ae72f8bf5e3f9a1e8ea0c7c5"
+    "revision": "8ffaea3082ce774e5c474c6361479557"
   },
   {
     "url": "join/index.html",
-    "revision": "85140ecaeee721459124d3a8f22b22c2"
+    "revision": "9b680f8dfb2d5115da2c0990f516a35c"
   },
   {
     "url": "posts/node.html",
-    "revision": "32f717ce0de8e88d26b30b05f6c803bc"
+    "revision": "eddcf2e3982663258bb690b8f397e4dd"
   },
   {
     "url": "posts/text-test.html",
-    "revision": "947365b311bc212b064b91c8e27d6215"
+    "revision": "3aaa07441bffbd187197d646a8c18d47"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
