@@ -21,15 +21,15 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "7ed1372a96adc183aa098a12fed5a759"
+    "revision": "66373ff62b729052efbb640500660aa6"
   },
   {
     "url": "about/index.html",
-    "revision": "d4a0c1a4affa09746274754458c88300"
+    "revision": "762a63acf136ca766e7e353f3b0306d9"
   },
   {
-    "url": "assets/css/styles.39baeddb.css",
-    "revision": "ebd97ce75170eeca2544ad4841aa39b5"
+    "url": "assets/css/styles.3134f5e5.css",
+    "revision": "edaca979c012823525dd4699d07ad6dd"
   },
   {
     "url": "assets/fonts/fa-brands-400.030846b7.woff",
@@ -156,36 +156,76 @@ self.__precacheManifest = [
     "revision": "e98a92ac980c63c46a7e25c4fbcf30ef"
   },
   {
-    "url": "assets/js/1.f01e236a.js",
-    "revision": "471bc8fbcfb4cbff5668f6473aa83b45"
+    "url": "assets/js/1.b7b9ef96.js",
+    "revision": "1eabefd4aed45cc918611b8b59c68105"
   },
   {
-    "url": "assets/js/2.4c4c122c.js",
-    "revision": "620e9ad2a63ca24ca361dcd6f81226d2"
+    "url": "assets/js/10.5646a794.js",
+    "revision": "de21cd568b1c39a9356e81433c2b290a"
   },
   {
-    "url": "assets/js/3.35c55286.js",
-    "revision": "e5e965a532a1d5ee1adb741e8233f962"
+    "url": "assets/js/11.c87cef83.js",
+    "revision": "dad8f6e7fd2d3928fc24a3478d063f29"
   },
   {
-    "url": "assets/js/4.8f9c377d.js",
-    "revision": "8172d13c12dc9830755b247d4e2d5a86"
+    "url": "assets/js/12.057334a9.js",
+    "revision": "647984e6a7e8dabc96d47bf4801fcc9f"
   },
   {
-    "url": "assets/js/5.9109054c.js",
-    "revision": "f34e0c6390c064e14af4d929e0764d92"
+    "url": "assets/js/13.ede7b6e5.js",
+    "revision": "e1eba4f89af02c9d5e903545aa9237b4"
   },
   {
-    "url": "assets/js/6.3eae6666.js",
-    "revision": "92c2e806ae7f708c2bc3e2c937a1de6e"
+    "url": "assets/js/14.b7f0de06.js",
+    "revision": "772f37fe311cfb32087cb3aab0e3e19f"
   },
   {
-    "url": "assets/js/app.39baeddb.js",
-    "revision": "7f82bade22abf6f8e74404c6b0771544"
+    "url": "assets/js/2.6dc9699d.js",
+    "revision": "dcdac793caf6fe48aabd6059b5fbafde"
+  },
+  {
+    "url": "assets/js/3.7f8fd567.js",
+    "revision": "48885877bc7758d90a9dc87c2131c686"
+  },
+  {
+    "url": "assets/js/4.7ad2582a.js",
+    "revision": "eabe12863d3fdd70ac13aa9d4a319d3b"
+  },
+  {
+    "url": "assets/js/5.58d9c280.js",
+    "revision": "2bcad94a4c75815aface831833bbb9b6"
+  },
+  {
+    "url": "assets/js/6.748537d6.js",
+    "revision": "6ca5df7201f9d4ed73cf2d2f5d9561c0"
+  },
+  {
+    "url": "assets/js/7.5ece7323.js",
+    "revision": "5a55b79ff906e34ddd15f56b23d2cb68"
+  },
+  {
+    "url": "assets/js/8.860cd481.js",
+    "revision": "81fdf6299ecb29768311b8e135c6197e"
+  },
+  {
+    "url": "assets/js/9.573bad36.js",
+    "revision": "b4b6e92dcf5279ed444f498d7629fd76"
+  },
+  {
+    "url": "assets/js/app.3134f5e5.js",
+    "revision": "187a10194d2235afda85640f88d195a0"
+  },
+  {
+    "url": "blog/H5游戏开发/index.html",
+    "revision": "842f451d88c330cea13509159a98dbfe"
   },
   {
     "url": "blog/index.html",
-    "revision": "3f7f0ed50b5a2ddae4672cead8cd40f1"
+    "revision": "f604b384a9114c1021455f79306fd55f"
+  },
+  {
+    "url": "blog/Node/index.html",
+    "revision": "f16320ce8e4f855a46061a2c643a30fd"
   },
   {
     "url": "face.jpg",
@@ -205,19 +245,43 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "b68ec7c7daac43cb5f0bd010eb181e09"
+    "revision": "5bc270408b7ade2a5ecfcadddeab5feb"
   },
   {
     "url": "join/index.html",
-    "revision": "6e6806a6a9a9d077a948e25a7dc41c68"
+    "revision": "c6ac7fb42b9618916d3ee5b81d96ce10"
+  },
+  {
+    "url": "posts/node - 副本 (2).html",
+    "revision": "66373ff62b729052efbb640500660aa6"
+  },
+  {
+    "url": "posts/node - 副本 (3).html",
+    "revision": "66373ff62b729052efbb640500660aa6"
+  },
+  {
+    "url": "posts/node - 副本 (4).html",
+    "revision": "66373ff62b729052efbb640500660aa6"
+  },
+  {
+    "url": "posts/node - 副本 (5).html",
+    "revision": "66373ff62b729052efbb640500660aa6"
+  },
+  {
+    "url": "posts/node - 副本 (6).html",
+    "revision": "66373ff62b729052efbb640500660aa6"
+  },
+  {
+    "url": "posts/node - 副本.html",
+    "revision": "72ab9c1d6c3bd0e797dd2a99c89df416"
   },
   {
     "url": "posts/node.html",
-    "revision": "cc937d050540febda477bd7a705d2e76"
+    "revision": "b480f892004a92384bead1ab2f4bb149"
   },
   {
     "url": "posts/text-test.html",
-    "revision": "7d4ef107560fbb5e01befb064aec73b4"
+    "revision": "17172b7862af32bf8c75efb0d2112acf"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();

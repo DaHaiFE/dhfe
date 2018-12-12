@@ -1,4 +1,4 @@
 ---
-layout: tags
+layout: node
 title: Blog
 ---

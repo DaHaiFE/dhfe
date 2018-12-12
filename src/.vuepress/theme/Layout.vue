@@ -45,6 +45,8 @@
     import Post from './Post'
     import About from './About'
     import Join from './Join'
+    import Node from './Node'
+    import Game from './Game'
     import {pathToComponentName, updateMetaTags} from './libs/utils'
 
     export default {
@@ -57,7 +59,9 @@
             Tags,
             Post,
             About,
-            Join
+            Join,
+            Node,
+            Game
         },
         data() {
             const mobilePoint = 1264
