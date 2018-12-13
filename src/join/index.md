@@ -1,6 +1,6 @@
 ---
 layout: join
-title: 加入我们
+title: 加入我们吧
 description: 这是我测试的数据des
 ---
 
