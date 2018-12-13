@@ -1,7 +1,7 @@
 ---
-title: 程序猿生存指南-29 朝花夕拾
+title: 程序猿生存指南
 date: 2018-12-06
-tags: [JavaScript, Node]
+tags: [JavaScript, NodeJs, Game]
 description: 李冀说的那些关于高校老师的黑幕，我或多或少也在别人嘴里听到过。物欲横流，一切向钱看齐，某些教授也不例外。各行各业都有自己的酸楚，各行各业也都有自己的生财之道
 ---
 

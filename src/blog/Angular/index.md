@@ -1,0 +1,4 @@
+---
+layout: angular
+title: Blog
+---

@@ -1,0 +1,4 @@
+---
+layout: vu
+title: Blog
+---

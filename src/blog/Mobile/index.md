@@ -1,0 +1,4 @@
+---
+layout: mobile
+title: Blog
+---

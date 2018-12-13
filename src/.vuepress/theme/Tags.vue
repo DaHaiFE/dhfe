@@ -1,7 +1,7 @@
 <template>
     <v-container grid-list-xl
                  align-center
-                 class="blog-container py-5">
+                 class="blog-container">
         <v-layout row
                   wrap
                   style="margin: 0;">
@@ -47,6 +47,11 @@
     import PostCard from './components/PostCard'
 
     export default {
+        data (){
+            return {
+                pageNum: 1
+            }
+        },
         components: {
             Tag,
             PostTime,
@@ -60,14 +65,16 @@
             pageList() {
                 return !this.$blog.tags[this.tagName] ? this.$blog.postList : this.$blog.tags[this.tagName]
             },
-            pageNum() {
-                return this.$route.params.pageNum || 1
-            }
+            // pageNum() {
+            //     return this.$route.params.pageNum || 1
+            // }
         },
         methods: {
             goPage(pageNum) {
-                const path = this.$site.themeConfig.pagination.path
-                this.$router.push(pageNum === 1 ? '/' : path.replace(':pageNum', pageNum))
+                // console.log(pageNum)
+                this.pageNum = pageNum || 1
+                // const path = this.$site.themeConfig.pagination.path
+                // this.$router.push(pageNum === 1 ? '/' : path.replace(':pageNum', pageNum))
             }
         }
     }
