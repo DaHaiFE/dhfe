@@ -47,6 +47,14 @@
     import Join from './Join'
     import Node from './Node'
     import Game from './Game'
+    import React from './React'
+    import Angular from './Angular'
+    import Vu from './Vu'
+    import Mobile from './Mobile'
+    import Css from './Css'
+    import Hl from './Hl'
+    import Performance from './Performance'
+    import Security from './Security'
     import {pathToComponentName, updateMetaTags} from './libs/utils'
 
     export default {
@@ -61,7 +69,15 @@
             About,
             Join,
             Node,
-            Game
+            Game,
+            React,
+            Angular,
+            Vu,
+            Mobile,
+            Css,
+            Hl,
+            Performance,
+            Security
         },
         data() {
             const mobilePoint = 1264

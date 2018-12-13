@@ -1,0 +1,4 @@
+---
+layout: react
+title: Blog
+---

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>404</h1>
+        <h1>404232</h1>
     </div>
 </template>
 <script>
@@ -12,9 +12,7 @@
             }
         },
         mounted() {
-            this.pathHref()
+            window.location.href = '/'
         }
     }
 </script>
-<style lang="stylus">
-</style>
