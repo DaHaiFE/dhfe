@@ -19,3 +19,6 @@ NodeJs、Javascript、React、Angular、Vue、Mobile、Css、Html、Performance�
 ---
 **注意**
 每次写完markdown文件，大家都要执行下命令yarn build，在推送到github
+---
+**markdown文档**
+/src/posts
