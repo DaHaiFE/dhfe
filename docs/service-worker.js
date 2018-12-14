@@ -21,14 +21,14 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "b62d99a4ef85ff3025621331bfdfaf05"
+    "revision": "876bcb207f542dddaa9b9ff826e442ea"
   },
   {
     "url": "about/index.html",
-    "revision": "cd0d50661ee89a0d029dcc86c0dcc9e7"
+    "revision": "f1070d8b7c761766ecb73e8e3cf3e074"
   },
   {
-    "url": "assets/css/styles.65923129.css",
+    "url": "assets/css/styles.86be1a08.css",
     "revision": "c20a7b2346fbb0debe228da5bc9a154d"
   },
   {
@@ -216,56 +216,56 @@ self.__precacheManifest = [
     "revision": "477d207089d22694f86690b5508557ed"
   },
   {
-    "url": "assets/js/app.65923129.js",
-    "revision": "0b7de641e65ea1986c3c173c6552a36b"
+    "url": "assets/js/app.86be1a08.js",
+    "revision": "82804caac86582c6a83307c2fdf903aa"
   },
   {
     "url": "blog/Angular/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "blog/Css/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "blog/Game/index.html",
-    "revision": "56cc4f70d92db7d2b57b66f64f7f1e0d"
+    "revision": "3eb4ade9707a81614ad476aa6d5ff651"
   },
   {
     "url": "blog/Html/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "blog/index.html",
-    "revision": "cc8bad1d77ac2fc7ed7604f22cc2f2f1"
+    "revision": "41cf28d42052a296cd382f2f9f39815e"
   },
   {
     "url": "blog/Mobile/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "blog/Node/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "blog/Performance/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "blog/React/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "blog/Security/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "blog/Vu/index.html",
-    "revision": "42339c83f41aa6c9209f1cba2fb27c90"
+    "revision": "26cbd2e04737bcfaf64c5bcc8527b0cd"
   },
   {
     "url": "face.jpg",
-    "revision": "55c9d89de66c7f697ead1b3ac10b008e"
+    "revision": "31e39750b174cd4ce0150dc073db73df"
   },
   {
     "url": "icons/192.png",
@@ -281,15 +281,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "da4bd50da1ccecad7589e874d1017f15"
+    "revision": "cf85b0e3237879beeaefaf3244b1872a"
   },
   {
     "url": "join/index.html",
-    "revision": "9b25350c06faf97a44cc5f10d790bbd4"
+    "revision": "e3abbbb5d9a9c303b5a6a0a34c04c78d"
   },
   {
     "url": "posts/text-test.html",
-    "revision": "8a6c6bcff91e34357cdd766042d1c596"
+    "revision": "c2f2295522673d94aeed42200999589a"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
