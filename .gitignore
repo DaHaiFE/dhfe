@@ -4,6 +4,5 @@ node_modules
 .temp
 yarn.lock
 vuepress
-CNAME
 package-lock.json
 TODOs.md
