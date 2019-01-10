@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>30分钟快速了解webpack · 大海前端团队 · 一群有趣有爱的人儿一起做有意义的事儿</title>
+    <meta name="description" content="前言——webpack现在已成为前端自动化、模块化不可或缺的一款工具，我们可以把它看做是一种模块打包机，它来分析你的项目结构、找到JS模块以及一些浏览器不能直接运行的拓展语言（如SASS、LESS等），然后将其打包为合适的格式供浏览器使用......">
+    <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3F51B5">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="content-type" content="no-cache, must-revalidate">
+  <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/192.png">
+  <meta name="msapplication-TileImage" content="/icons/192.png">
+  <meta name="msapplication-TileColor" content="#3F51B5">
+    
+    <link rel="preload" href="/assets/css/styles.c9bafd68.css" as="style"><link rel="preload" href="/assets/js/app.c9bafd68.js" as="script"><link rel="preload" href="/assets/css/styles.c9bafd68.css" as="style"><link rel="preload" href="/assets/js/18.42157d99.js" as="script"><link rel="prefetch" href="/assets/js/1.f21a3601.js"><link rel="prefetch" href="/assets/js/10.70867b15.js"><link rel="prefetch" href="/assets/js/11.6fea629c.js"><link rel="prefetch" href="/assets/js/12.11a0890d.js"><link rel="prefetch" href="/assets/js/13.6e8d24d5.js"><link rel="prefetch" href="/assets/js/14.9e6237ba.js"><link rel="prefetch" href="/assets/js/15.b4de77dd.js"><link rel="prefetch" href="/assets/js/16.9c90e1cd.js"><link rel="prefetch" href="/assets/js/17.c412f709.js"><link rel="prefetch" href="/assets/js/2.2a6d82ad.js"><link rel="prefetch" href="/assets/js/3.6c4830ce.js"><link rel="prefetch" href="/assets/js/4.a98c06b1.js"><link rel="prefetch" href="/assets/js/5.7f52ba26.js"><link rel="prefetch" href="/assets/js/6.01dbd739.js"><link rel="prefetch" href="/assets/js/7.0758e26b.js"><link rel="prefetch" href="/assets/js/8.e56bf32d.js"><link rel="prefetch" href="/assets/js/9.398f3f80.js">
+    <link rel="stylesheet" href="/assets/css/styles.c9bafd68.css"><link rel="stylesheet" href="/assets/css/styles.c9bafd68.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div data-app="true" id="app" class="application theme--light"><div class="application--wrap"><div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="v-progress-linear blog-progress" style="height:3px;display:none;"><div class="v-progress-linear__background accent" style="height:3px;opacity:0.4;width:100%;"></div><div class="v-progress-linear__bar"><!----><div class="v-progress-linear__bar__determinate accent" style="width:0%;"></div></div></div><aside class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0px;max-height:calc(100% - 0px);transform:translateX(-240px);width:240px;"><div><div class="aside-brand-wrap" style="display:;"><div class="aside-brand"><a href="/" class="aside-avatar elevation-2 router-link-active"><img src="/face.jpg" alt="avatar"></a><hgroup class="mt-3 variant-hide"><div class="subheading white--text">大海前端团队-DHFE</div><a href="javacript:void(0)" title="有爱有趣" class="aside-mail primary--text text--lighten-5">有爱有趣</a></hgroup></div></div><hr class="v-divider theme--dark"><div role="list" class="v-list nav-list theme--light"><div role="listitem" class="secondary--text"><a href="/blog" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-tag"></i></div></div><div class="v-list__tile__content">Blog</div></a></div><div role="listitem" class="secondary--text"><a href="https://github.com/DahaiFE/dhfe" target="_blank" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fab fa-github"></i></div></div><div class="v-list__tile__content">Github</div></a></div><div role="listitem" class="secondary--text"><a href="/about" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-user-secret"></i></div></div><div class="v-list__tile__content">About</div></a></div><div role="listitem" class="secondary--text"><a href="/join" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-users"></i></div></div><div class="v-list__tile__content">Join</div></a></div></div></div><div class="v-navigation-drawer__border"></div></aside><main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><div class="v-content__wrap"><div class="container blog-container grid-list-xl align-center"><div class="layout row wrap"><div class="flex mb-3 xs12"><article class="mb-lay v-card v-sheet theme--light elevation-2 elevation-16 post-card"><div class="v-card__title"><div class="flex xs12"><h2 class="display-1 mb-3">30分钟快速了解webpack</h2><div class="post-meta"><time datetime="2018-1-10" class="secondary--text post-time">2018年01月10日</time></div></div></div><div class="v-card__text pt-0 pb-0"><div class="flex xs12"><div class="content custom"><p>前言——webpack现在已成为前端自动化、模块化不可或缺的一款工具，我们可以把它看做是一种模块打包机，它来分析你的项目结构、找到JS模块以及一些浏览器不能直接运行的拓展语言（如SASS、LESS等），然后将其打包为合适的格式供浏览器使用......</p><p>首先要确保你的计算机安装了<a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">nodeJS</a>然后我们就可以开始我们的webpack之路了~~~先来按照如下步骤创建个项目吧：
+</p><h3 id="_1-初始化package-json文件"><a href="#_1-初始化package-json文件" aria-hidden="true" class="header-anchor">#</a> 1. 初始化package.json文件</h3><pre class="language-text"><code>npm init -y
+</code></pre><h3 id="_2-下载webpack-在4-0版本需要下载两个包webpack和webpack-cli-d的意思是开发环境依赖"><a href="#_2-下载webpack-在4-0版本需要下载两个包webpack和webpack-cli-d的意思是开发环境依赖" aria-hidden="true" class="header-anchor">#</a> 2. 下载webpack,在4.0版本需要下载两个包webpack和webpack-cli(-D的意思是开发环境依赖)</h3><pre class="language-text"><code>npm install webpack webpack-cli -D
+</code></pre><h3 id="_3-这里插一句，在下面的步骤中童鞋们不要忘记install依赖的模块和插件哦！"><a href="#_3-这里插一句，在下面的步骤中童鞋们不要忘记install依赖的模块和插件哦！" aria-hidden="true" class="header-anchor">#</a> 3. 这里插一句，在下面的步骤中童鞋们不要忘记install依赖的模块和插件哦！</h3><h3 id="_4-创建一个webpack配置文件webpack-config-js"><a href="#_4-创建一个webpack配置文件webpack-config-js" aria-hidden="true" class="header-anchor">#</a> 4. 创建一个webpack配置文件webpack.config.js</h3><pre class="language-text"><code>const path = require('path');
+module.exports = {
+    entry:'',
+    output:{
+
+    },
+    module:{
+
+    },
+    plugins:{
+
+    },
+    devServer:{
+        
+    }
+}
+</code></pre><p>这里先说下几个核心的配置</p><ul><li>entry：入口；这是使用webpack的第一步，定义一个入口文件，相当于输入（单个或多个）</li><li>output:出口；也就是打包后文件输出到哪里，可以是定义一个文件也可以定义一个目录；path：定义一个路径（绝对路径） filename:打包后的文件名；假如是多个入口文件我们应该这样写：filename:'[name].[hash].js'</li></ul><pre class="language-text"><code>entry:'../main.js',
+output:{
+    path:path.join(__dirname,'../dist'),
+    filename:'bundle.js'
+},
+</code></pre><ul><li>loader：模块转换器；来把以前的模块内容转换为新的JS内容靠的就是loader</li><li>module：在这里配置模块规则，webpack打包模块靠的就是这里定义的模块规则,我们在module中配置一些规则rules，这里暂且以转换CSS文件为例：</li></ul><p>(1) test:这里是一个正则用于匹配转换的文件(这里是以.css后缀结尾的文件)</p><p>(2) loader:如果你只需要一个loader来处理那么就传一个字符串，如果有多个则写一个数组（这里需要两个css-loader解析css里的路径如背景图路径等等，style-loader用来把css文件内容变为style标签并插入）转换的时候是按数组从右往左去转换的。</p><pre class="language-text"><code>module:{
+    rules:[
+        {
+            test:/\.css$/,
+            loader:['style-loader','css-loader']
+        }
+    ]
+}
+</code></pre><ul><li>plugins：插件；webpack打包会有各种各样的事件，通过注册插件来处理这些事件，在构建流程中的特定时机注入扩展逻辑来做一些事情。这里我们以html-webpack-plugin这个插件为例，用它来根据模板来生成html文件到目标目录下,在配置前不要忘记安装这个插件,同时也不要忘记require这个插件！</li></ul><pre class="language-text"><code>npm install html-webpack-plugin -D
+</code></pre><p>使用的时候使用new关键字，同时可以传递参数
+(1)template:指定产出的html模板</p><p>(2)filename:产出html文件名</p><p>(3)hash:在引入的JS文件加入查询字符串避免缓存</p><p>(4)minify:压缩</p><p>我们也可以按需引入其他的变量参数</p><pre class="language-text"><code>plugins:[
+    new HtmlWebpackPlugin({
+        template:'./src/index.html',
+        filename:'index.html',
+        title:'入门webpack',
+        hash:true,
+        minify:{
+            removeAttributeQuotes:true
+        }
+    })
+]
+</code></pre><ul><li>devServer：开发服务器，这里我们来配置下开发服务器用来预览打包后的项目:首先找到package.json添加一个脚本,在scripts下添加</li></ul><pre class="language-text"><code>&quot;dev&quot;:&quot;webpack-dev-server --open --mode development&quot;
+</code></pre><p>这样我们就可以使用npm run dev来启动项目了,我们还需要在webpack.config.js中的devServer中来配置:</p><p>(1) contentBase:配置静态文件根目录，也就是你打包后的目录
+(2) host:主机(这里使用localhost)
+(3) port:端口(默认8080)
+(4) compress:服务器返回浏览器是否使用gzip压缩(布尔值)</p><pre class="language-text"><code>devServer:{
+    contentBase:'../dist',
+    host:'localhost',
+    port:'8080',
+    compress:true
+}
+</code></pre><blockquote><p>在使用webpack-dev-server启动服务后，会注入一个websocket客户端，主要用来检测到我们修改内容后通知webpack来重新编译并刷新页面。</p></blockquote><p>截止到这里，已经可以配置一个简单的webpack用来打包啦，不过这只是一个入门级的，在实际项目中还远远不够，到这里如果你还有兴趣，请继续往下走~~</p><h4 id="更多的配置"><a href="#更多的配置" aria-hidden="true" class="header-anchor">#</a> 更多的配置</h4><ol><li>entry以及output进阶。在项目中我们可能会有这种需求，那就是配置多个入口文件，这就涉及到了一个出口文件的命名问题。</li></ol><pre class="language-text"><code>entry: {
+    index: './src/index.js',
+    main:'./src/main.js'
+},
+output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[hash:8].js',
+}
+</code></pre><p>当我们有多入口的时候，出口文件应该像这样命名，并且可以定义一个hash值，并且可以使用冒号加数字来规定hash的长度。
+2. 图片的支持问题。我们可以使用两个loader来处理图片的打包问题，第一个是file-loader来解决CSS等文件中的引入图片路径问题，第二个是url-loader当图片较小的时候会把图片BASE64编码。</p><pre class="language-text"><code>{
+    test:/\.(jpg|png|gif|svg)$/,
+    use:'file-loader',
+    include:path.join(__dirname,'./src'),
+}
+</code></pre><ol start="3"><li>编译less和sass,这里同样是配置规则来处理；</li></ol><pre class="language-text"><code>const cssExtract=new ExtractTextWebpackPlugin('css.css');
+const lessExtract=new ExtractTextWebpackPlugin('less.css');
+const sassExtract=new ExtractTextWebpackPlugin('sass.css');
+{
+    test:/\.less$/,
+    use: lessExtract.extract({
+        use:['css-loader','less-loader']
+    }),
+    include:path.join(__dirname,'./src'),
+    exclude:/node_modules/
+},
+{
+    test:/\.scss$/,
+    use: sassExtract.extract({
+        use:['css-loader','sass-loader']
+    }),
+    include:path.join(__dirname,'./src'),
+    exclude:/node_modules/
+},
+</code></pre><ol start="4"><li>转义ES6和ES7及JSX。我们使用babel来转义：</li></ol><pre class="language-text"><code>{
+    test:/\.jsx?$/,
+    use: {
+        loader: 'babel-loader',
+        options: {
+            presets: [&quot;env&quot;,&quot;stage-0&quot;,&quot;react&quot;]
+        }
+    },
+    include:path.join(__dirname,'./src'),
+    exclude:/node_modules/
+},
+</code></pre><ol start="5"><li>devServer配置服务器代理，这个在项目中应该是非常常用的了，我们需要配置一个proxy属性，大多数时候我们在开发中处理跨域也需要用这个去请求后台接口:</li></ol><pre class="language-text"><code>proxy: {
+    '/api': {
+        target: 'http://172.1.1.1:5000',
+        pathRewrite: {'^/api' : '/api'},
+        changeOrigin: true
+    }
+}
+</code></pre><p>target的值就是你要请求的IP地址，可以按需自行配置。
+在进阶中的代码中，有配置loader的地方加了一个exclude属性，这个的作用主要是指定哪些目录下的文件不需要进行loader转换。暂且说这么多吧，一时就想起了这么多，有需要的可以留言一起探讨，下面再介绍些常用的loader和plugin吧~~</p><p>如有使用vue的项目可以配置如下module规则，不需要的可自行删减</p><pre class="language-text"><code>module: {
+    rules: [
+        {
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            options: {
+                loaders: {
+                    css: 'vue-style-loader!css-loader',
+                    less: 'vue-style-loader!css-loader!less-loader'
+                },
+                postLoaders: {
+                    html: 'babel-loader'
+                }
+            }
+        },
+        {
+            test: /iview\/.*?js$/,
+            loader: 'happypack/loader?id=happybabel',
+            exclude: /node_modules/
+        },
+        {
+            test: /\.js$/,
+            loader: 'happypack/loader?id=happybabel',
+            exclude: /node_modules/
+        },
+        {
+            test: /\.js[x]?$/,
+            include: [resolve('src')],
+            exclude: /node_modules/,
+            loader: 'happypack/loader?id=happybabel'
+        },
+        {
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract({
+                use: ['css-loader?minimize', 'autoprefixer-loader'],
+                fallback: 'style-loader'
+            })
+        },
+        {
+            test: /\.less$/,
+            use: ExtractTextPlugin.extract({
+                use: ['css-loader?minimize','autoprefixer-loader', 'less-loader'],
+                fallback: 'style-loader'
+            }),
+        },
+        {
+            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+            loader: 'url-loader?limit=1024'
+        },
+        {
+            test: /\.(html|tpl)$/,
+            loader: 'html-loader'
+        }
+    ]
+}
+</code></pre><h4 id="常用plugin简单介绍"><a href="#常用plugin简单介绍" aria-hidden="true" class="header-anchor">#</a> 常用plugin简单介绍</h4><ul><li>extract-text-webpack-plugin:此插件用来抽离css样式，假如你的css样式表很大推荐使用这个，以防止打包在js中引起样式错乱.</li><li><a href="https://www.npmjs.com/package/copy-webpack-plugin" target="_blank" rel="noopener noreferrer">copy-webpack-plugin</a>:在webpack中拷贝文件和文件夹</li><li><a href="https://www.npmjs.com/package/clean-webpack-plugin" target="_blank" rel="noopener noreferrer">clean-webpack-plugin</a>:用于在打包前先清空输出目录</li><li><a href="https://www.npmjs.com/package/happypack" target="_blank" rel="noopener noreferrer">happypack</a>:并行转换文件，可以更加快速的构建</li><li>webpack.optimize.CommonsChunkPlugin:用于提取公共代码</li><li>webpack.DefinePlugin:用于创建一个可以配置的全局变量，便于开发模式和发布模式的构建</li><li>webpack.optimize.UglifyJsPlugin:用来压缩你的js代码</li></ul><blockquote><p>暂时就写到这里了，可以做一个入门了解，webpack还有好多好多东西....有时间整理下再继续更新~~</p></blockquote></div></div></div><div class="v-card__actions"><div class="flex xs12"><a href="/blog/JavaScript"><span tabindex="0" class="v-chip capitalize chip-tag v-chip--label v-chip--small theme--light"><span class="v-chip__content">JavaScript
+            </span></span></a><a href="/blog/NodeJs"><span tabindex="0" class="v-chip capitalize chip-tag v-chip--label v-chip--small theme--light"><span class="v-chip__content">NodeJs
+            </span></span></a><a href="/blog/Performance"><span tabindex="0" class="v-chip capitalize chip-tag v-chip--label v-chip--small theme--light"><span class="v-chip__content">Performance
+            </span></span></a></div></div></article></div><div class="flex text-xs-left xs6"><a href="/posts/text-test.html" class="post-nav v-btn v-btn--flat v-btn--router theme--light"><div class="v-btn__content"><div class="grey--text"><i class="fa mr-1 fa-chevron-left"></i>Prev
+                </div><div class="title mt-1 primary--text hidden-xs-only title-font">程序猿生存指南</div></div></a></div><div class="flex text-xs-right xs6"><!----></div></div></div></div></main><button type="button" class="v-btn v-btn--bottom v-btn--floating v-btn--fixed v-btn--right theme--light accent" style="display:none;background:#3a8ee6 !important;"><div class="v-btn__content"><i class="fa fa-lg fa-chevron-up"></i></div></button></div></div></div>
+    <script src="/assets/js/app.c9bafd68.js" defer></script><script src="/assets/js/18.42157d99.js" defer></script>
+  </body>
+</html>
