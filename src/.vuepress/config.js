@@ -23,7 +23,7 @@ module.exports = {
         ['meta', {name: 'msapplication-TileImage', content: '/icons/192.png'}],
         ['meta', {name: 'msapplication-TileColor', content: '#3F51B5'}]
     ],
-    serviceWorker: true,
+    serviceWorker: false,
     theme: '',
     locales: {
         '/': {
