@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS数组方法总结 · 大海前端团队 · 一群有趣有爱的人儿一起做有意义的事儿</title>
+    <meta name="description" content="Array对象用于在单个的变量中存储多个值。">
+    <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3F51B5">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="content-type" content="no-cache, must-revalidate">
+  <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/192.png">
+  <meta name="msapplication-TileImage" content="/icons/192.png">
+  <meta name="msapplication-TileColor" content="#3F51B5">
+    
+    <link rel="preload" href="/assets/css/styles.d336fc99.css" as="style"><link rel="preload" href="/assets/js/app.d336fc99.js" as="script"><link rel="preload" href="/assets/css/styles.d336fc99.css" as="style"><link rel="preload" href="/assets/js/18.3eda089e.js" as="script"><link rel="prefetch" href="/assets/js/1.71a80457.js"><link rel="prefetch" href="/assets/js/10.8077aed4.js"><link rel="prefetch" href="/assets/js/11.db82581a.js"><link rel="prefetch" href="/assets/js/12.b9daa751.js"><link rel="prefetch" href="/assets/js/13.847cba75.js"><link rel="prefetch" href="/assets/js/14.289c6c70.js"><link rel="prefetch" href="/assets/js/15.ab4e01fe.js"><link rel="prefetch" href="/assets/js/16.49a7f5f2.js"><link rel="prefetch" href="/assets/js/17.bfe820eb.js"><link rel="prefetch" href="/assets/js/19.5f7fbd2f.js"><link rel="prefetch" href="/assets/js/2.15838eda.js"><link rel="prefetch" href="/assets/js/20.fc2057e6.js"><link rel="prefetch" href="/assets/js/21.54d47d93.js"><link rel="prefetch" href="/assets/js/3.844fb6a7.js"><link rel="prefetch" href="/assets/js/4.1a7ee292.js"><link rel="prefetch" href="/assets/js/5.3ddb7eaa.js"><link rel="prefetch" href="/assets/js/6.e7d603e5.js"><link rel="prefetch" href="/assets/js/7.235919de.js"><link rel="prefetch" href="/assets/js/8.909327f6.js"><link rel="prefetch" href="/assets/js/9.66dd8bba.js">
+    <link rel="stylesheet" href="/assets/css/styles.d336fc99.css"><link rel="stylesheet" href="/assets/css/styles.d336fc99.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div data-app="true" id="app" class="application theme--light"><div class="application--wrap"><div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="v-progress-linear blog-progress" style="height:3px;display:none;"><div class="v-progress-linear__background accent" style="height:3px;opacity:0.4;width:100%;"></div><div class="v-progress-linear__bar"><!----><div class="v-progress-linear__bar__determinate accent" style="width:0%;"></div></div></div><aside class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0px;max-height:calc(100% - 0px);transform:translateX(-240px);width:240px;"><div><div class="aside-brand-wrap" style="display:;"><div class="aside-brand"><a href="/" class="aside-avatar elevation-2 router-link-active"><img src="/face.jpg" alt="avatar"></a><hgroup class="mt-3 variant-hide"><div class="subheading white--text">大海前端团队-DHFE</div><a href="javacript:void(0)" title="有爱有趣" class="aside-mail primary--text text--lighten-5">有爱有趣</a></hgroup></div></div><hr class="v-divider theme--dark"><div role="list" class="v-list nav-list theme--light"><div role="listitem" class="secondary--text"><a href="/blog" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-tag"></i></div></div><div class="v-list__tile__content">Blog</div></a></div><div role="listitem" class="secondary--text"><a href="https://github.com/DahaiFE/dhfe" target="_blank" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fab fa-github"></i></div></div><div class="v-list__tile__content">Github</div></a></div><div role="listitem" class="secondary--text"><a href="/about" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-user-secret"></i></div></div><div class="v-list__tile__content">About</div></a></div><div role="listitem" class="secondary--text"><a href="/join" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-users"></i></div></div><div class="v-list__tile__content">Join</div></a></div></div></div><div class="v-navigation-drawer__border"></div></aside><main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><div class="v-content__wrap"><div class="container blog-container grid-list-xl align-center"><div class="layout row wrap"><div class="flex mb-3 xs12"><article class="mb-lay v-card v-sheet theme--light elevation-2 elevation-16 post-card"><div class="v-card__title"><div class="flex xs12"><h2 class="display-1 mb-3">JS数组方法总结</h2><div class="post-meta"><time datetime="2019-01-20T00:00:00.000Z" class="secondary--text post-time">2019年01月20日</time></div></div></div><div class="v-card__text pt-0 pb-0"><div class="flex xs12"><div class="content custom"><p>Array对象用于在单个的变量中存储多个值。</p><h2 id="一、javascript中创建数组的两种方式"><a href="#一、javascript中创建数组的两种方式" aria-hidden="true" class="header-anchor">#</a> 一、Javascript中创建数组的两种方式</h2><h4 id="_1-使用array构造函数创建数组"><a href="#_1-使用array构造函数创建数组" aria-hidden="true" class="header-anchor">#</a> 1. 使用Array构造函数创建数组</h4><pre class="language-text"><code>var arr1 = new Array(); // 创建一个空数组
+var arr2 = new Array(10); // 创建一个包含10项的数组`
+var arr3 = new Array(&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;); // 创建一个包含3个字符串的数组
+</code></pre><h4 id="_2-使用数组字面量表示法创建数组"><a href="#_2-使用数组字面量表示法创建数组" aria-hidden="true" class="header-anchor">#</a> 2. 使用数组字面量表示法创建数组</h4><pre class="language-text"><code>var arr4 = []; // 创建一个空数组
+var arr5 = [10]; // 创建一个包含3项的数组`
+var arr6 = [&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;]; // 创建一个包含3个字符串的数组
+</code></pre><h2 id="二、数组的原型方法"><a href="#二、数组的原型方法" aria-hidden="true" class="header-anchor">#</a> 二、数组的原型方法</h2><p>数组的方法有数组原型方法，也有从object对象继承来的方法，在此只介绍数组的原型方法。</p><h4 id="_1-join"><a href="#_1-join" aria-hidden="true" class="header-anchor">#</a> 1. join()</h4><p>join(separator): 将数组的元素组成一个字符串，以separator为分隔符，省略的话则用默认用逗号为分隔符，该方法只接收一个参数：即分隔符。</p><pre class="language-text"><code>var arr = [1,2,3,4];
+console.log(arr.join()); // 1,2,3,4
+console.log(arr.join(&quot;-&quot;)); // 1-2-3-4
+</code></pre><p>通过join()方法可以实现重复字符串，只需传入字符串以及重复的次数，就能返回重复后的字符串，函数如下：</p><pre class="language-text"><code>function repeatString (str , n) {
+  return new Array(n + 1).join(str);
+}
+console.log(repeatString('abc', 3)); // abcabcabc
+</code></pre><h4 id="_2-push-和pop"><a href="#_2-push-和pop" aria-hidden="true" class="header-anchor">#</a> 2. push()和pop()</h4><p>push(): 可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。
+<br>
+pop()：数组末尾移除最后一项，减少数组的 length 值，然后返回移除的项。</p><pre class="language-text"><code>var arr = [&quot;Lily&quot;, &quot;Lucky&quot; , &quot;Tom&quot;]
+var count = arr.push(&quot;Jack&quot;, &quot;Xbetty&quot;);
+console.log(count); // 5
+console.log(arr); // [&quot;Lily&quot;, &quot;Lucky&quot; , &quot;Tom&quot; , &quot;Jack&quot;, &quot;Xbetty&quot;]
+var item = arr.pop();
+console.log(item); // Xbetty
+console.log(arr); // [&quot;Lily&quot;, &quot;Lucky&quot; , &quot;Tom&quot; , &quot;Jack&quot;]
+</code></pre><h4 id="_3-shift-和unshift"><a href="#_3-shift-和unshift" aria-hidden="true" class="header-anchor">#</a> 3. shift()和unshift()</h4><p>shift()：删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined 。
+<br>
+unshift:将参数添加到原数组开头，并返回数组的长度 。
+这组方法和上面的push()和pop()方法正好对应，一个是操作数组的开头，一个是操作数组的结尾。</p><pre class="language-text"><code>var arr = [&quot;Lily&quot;, &quot;Lucky&quot; , &quot;Tom&quot;]
+var count = arr.unshift(&quot;Jack&quot;, &quot;Xbetty&quot;);
+console.log(count); // 5
+console.log(arr); // [ &quot;Jack&quot;, &quot;Xbetty&quot;, &quot;Lily&quot;, &quot;Lucky&quot; , &quot;Tom&quot;]
+var item = arr.shift();
+console.log(item); // Jack
+console.log(arr); // [&quot;Xbetty&quot;, &quot;Lily&quot;, &quot;Lucky&quot; , &quot;Tom&quot;]
+</code></pre><blockquote><p>Array的push与unshift方法性能比较分析</p></blockquote><p>从原理就可以知道，unshift的效率是较低的。原因是，它每添加一个元素，都要把现有元素往下移一个位置。unshift比push要慢差不多100倍！
+<br>
+Array有一个叫做reverse的方法，能够把一个数组反转。先把要放进数组的元素用push添加，再执行一次reverse，就达到了unshift的效果。
+<br>
+reverse性能极高，甚至于没有额外的消耗，可以放心使用。</p><h4 id="_4-sort"><a href="#_4-sort" aria-hidden="true" class="header-anchor">#</a> 4. sort()</h4><p>sort()：按升序排列数组项——即最小的值位于最前面，最大的值排在最后面。
+<br>
+在排序时，sort()方法会调用每个数组项的 toString()转型方法，然后比较得到的字符串，以确定如何排序。即使数组中的每一项都是数值， sort()方法比较的也是字符串，因此会出现以下的这种情况：</p><pre class="language-text"><code>var arr1 = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;]
+console.log(arr1.sort()); // [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;]
+var arr2 = [13, 24, 51 ,3]
+console.log(arr2.sort()); // [13, 24, 3, 51]
+console.log(arr2); // [13, 24, 3, 51] （原数组被改变）
+</code></pre><p>为了解决上述问题，sort()方法可以接收一个比较函数作为参数，以便我们指定哪个值位于哪个值的前面。
+<br>
+比较函数接收两个参数，如果第一个参数应该位于第二个之前则返回一个负数，如果两个参数相等则返回 0，如果第一个参数应该位于第二个之后则返回一个正数。
+<br>
+以下就是一个简单的比较函数：</p><pre class="language-text"><code>function compare(value1, value2) {
+  if(value1 &lt; value2) {
+    return -1;
+  } else if (value1 &gt; value2) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+arr2 = [13, 24, 51 ,3];
+console.log(arr2.sort(compare)); // [3, 13, 24, 51]
+</code></pre><p>如果需要通过比较函数产生降序排序的结果，只要交换比较函数返回的值即可：</p><pre class="language-text"><code>function compare(value1, value2) {
+  if(value1 &lt; value2) {
+    return 1;
+  } else if (value1 &gt; value2) {
+    return -1;
+  } else {
+    return 0;
+  }
+}
+arr2 = [13, 24, 51 ,3];
+console.log(arr2.sort(compare)); // [51, 24, 13, 3]
+</code></pre><h4 id="_5-reverse"><a href="#_5-reverse" aria-hidden="true" class="header-anchor">#</a> 5. reverse()</h4><p>reverse()：反转数组项的顺序。</p><pre class="language-text"><code>var arr = [1,2,3,4];
+console.log(arr.reverse()); // [4,3,2,1]
+console.log(arr); // [4,3,2,1]（原数组改变）
+</code></pre><h4 id="_6-concat"><a href="#_6-concat" aria-hidden="true" class="header-anchor">#</a> 6. concat()</h4><p>concat() ：将参数添加到原数组中。
+<br>
+这个方法会先创建当前数组一个副本，然后将接收到的参数添加到这个副本的末尾，最后返回新构建的数组。
+<br>
+在没有给 concat()方法传递参数的情况下，它只是复制当前数组并返回副本。</p><pre class="language-text"><code>var arr = [1,2,3,4];
+var arrCopy1 = arr.concat(5,6,[7,8])
+console.log(arrCopy1); // [1,2,3,4,5,6,7,8]
+console.log(arr); // [1,2,3,4]（原数组未改变）
+</code></pre><blockquote><p>从上面测试结果可以发现：传入的不是数组，则直接把参数添加到数组后面，如果传入的是数组，则将数组中的各个项添加到数组中。但是如果传入的是一个二维数组呢？</p></blockquote><pre class="language-text"><code>var arrCopy2 = arr.concat([5,6,[7,8]])
+console.log(arrCopy2); // [1,2,3,4,5,6,Array[2]]
+console.log(arrCopy2[6]); // [7,8]
+</code></pre><p>上述代码中，arrCopy2数组的第六项是一个包含两项的数组，也就是说concat方法只能将传入数组中的每一项添加到数组中，如果传入数组中有些项是数组，那么也会把这一数组项当作一项添加到arrCopy2中。</p><h4 id="_7-slice"><a href="#_7-slice" aria-hidden="true" class="header-anchor">#</a> 7. slice()</h4><p>slice()：返回从原数组中指定开始下标到结束下标之间的项组成的新数组。
+<br>
+slice()方法可以接受一或两个参数，即要返回项的起始和结束位置。在只有一个参数的情况下， slice()方法返回从该参数指定位置开始到当前数组末尾的所有项。如果有两个参数，该方法返回起始和结束位置之间的项——但不包括结束位置的项。</p><pre class="language-text"><code>var arr = [1,2,3,4,5,6];
+var arrCopy1 = arr.slice(1);
+var arrCopy2 = arr.slice(1,4);
+var arrCopy3 = arr.slice(1,-2);
+var arrCopy4 = arr.slice(-4,-1);
+console.log(arr); // [1,2,3,4,5,6]（原数组不变）
+console.log(arrCopy1); // [2,3,4,5,6]
+console.log(arrCopy2); // [2,3,4]
+console.log(arrCopy3); // [2,3,4]
+console.log(arrCopy4); // [3,4,5]
+</code></pre><p>arrCopy1只设置了一个参数，也就是起始下标为1，所以返回的数组为下标1（包括下标1）开始到数组最后。
+arrCopy2设置了两个参数，返回起始下标（包括1）开始到终止下标（不包括4）的子数组。
+arrCopy3设置了两个参数，终止下标为负数，当出现负数时，将负数加上数组长度的值（6）来替换该位置的数，因此就是从1开始到4（不包括）的子数组。
+arrCopy4中两个参数都是负数，所以都加上数组长度6转换成正数，因此相当于slice(2,5)。</p><h4 id="_8-splice"><a href="#_8-splice" aria-hidden="true" class="header-anchor">#</a> 8. splice()</h4><p>splice()：很强大的数组方法，它有很多种用法，可以实现删除、插入和替换。
+<br>
+删除：可以删除任意数量的项，只需指定 2 个参数：要删除的第一项的位置和要删除的项数。例如， splice(0,2)会删除数组中的前两项。
+<br>
+插入：可以向指定位置插入任意数量的项，只需提供 3 个参数：起始位置、 0（要删除的项数）和要插入的项。例如，splice(2,0,4,6)会从当前数组的位置 2 开始插入4和6。
+<br>
+替换：可以向指定位置插入任意数量的项，且同时删除任意数量的项，只需指定 3 个参数：起始位置、要删除的项数和要插入的任意数量的项。插入的项数不必与删除的项数相等。例如，splice (2,1,4,6)会删除当前数组位置 2 的项，然后再从位置 2 开始插入4和6。
+<br>
+splice()方法始终都会返回一个数组，该数组中包含从原始数组中删除的项，如果没有删除任何项，则返回一个空数组。</p><pre class="language-text"><code>var arr = [1,2,3,4,5,6];
+var arrRemoved1 = arr.splice(0,2);
+console.log(arr); // [3,4,5,6]
+console.log(arrRemoved1); // [1,2]
+var arrRemoved2 = arr.splice(2,0,4,6);
+console.log(arr); // [3,4,4,6,5,6]
+console.log(arrRemoved2); // []
+var arrRemoved3 = arr.splice(1,1,2,9);
+console.log(arr); // [3,2,9,4,6,5,6]
+console.log(arrRemoved3); // 4
+</code></pre><h4 id="_9-indexof和lastindexof"><a href="#_9-indexof和lastindexof" aria-hidden="true" class="header-anchor">#</a> 9. indexOf和lastIndexOf()</h4><p>indexOf()：接收两个参数：要查找的项和（可选的）表示查找起点位置的索引。其中， 从数组的开头（位置 0）开始向后查找。
+<br>
+lastIndexOf：接收两个参数：要查找的项和（可选的）表示查找起点位置的索引。其中， 从数组的末尾开始向前查找。
+<br>
+这两个方法都返回要查找的项在数组中的位置，或者在没找到的情况下返回1。在比较第一个参数与数组中的每一项时，会使用全等操作符。</p><pre class="language-text"><code>var arr = [1,2,3,4,4,3,2,1];
+console.log(arr.indexOf(3)); // 2
+console.log(arr.lastIndexOf(3)); // 5
+console.log(arr.indexOf(3,2)); // 2
+console.log(arr.lastIndexOf(3,4)); // 2
+console.log(arr.indexOf(&quot;1&quot;)); // -1
+</code></pre><h4 id="_10-foreach"><a href="#_10-foreach" aria-hidden="true" class="header-anchor">#</a> 10. forEach()</h4><p>forEach()：对数组进行遍历循环，对数组中的每一项运行给定函数。这个方法没有返回值。
+参数都是function类型，默认有传参，参数分别为：遍历的数组内容；第对应的数组索引，数组本身。</p><pre class="language-text"><code>var arr = [1,2,3,4];
+arr.forEach(function(x,index,a){
+  console.log(x+'|'+index+'|'+(a ===arr));
+});
+// 1|0|true
+// 2|1|true
+// 3|2|true
+// 4|3|true
+</code></pre><h4 id="_11-map"><a href="#_11-map" aria-hidden="true" class="header-anchor">#</a> 11. map()</h4><p>map()：指“映射”，对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
+<br>
+下面代码利用map方法实现数组中每个数求平方。</p><pre class="language-text"><code>var arr = [1,2,3,4];
+var arr2 = arr.map(function(item){
+  return item*item;
+});
+console.log(arr2); // [1,4,9,16]
+</code></pre><h4 id="_12-filter"><a href="#_12-filter" aria-hidden="true" class="header-anchor">#</a> 12. filter()</h4><p>filter()：“过滤”功能，数组中的每一项运行给定函数，返回满足过滤条件组成的数组。</p><pre class="language-text"><code>var arr = [1,2,3,4,5,6];
+var arr2 = arr.filter(function(x,index){
+  return index % 2 === 0 || x &gt; 5
+});
+console.log(arr2); // [1,3,5,6]
+</code></pre><h4 id="_13-every"><a href="#_13-every" aria-hidden="true" class="header-anchor">#</a> 13. every()</h4><p>every()：判断数组中每一项都是否满足条件，只有所有项都满足条件，才会返回true。</p><pre class="language-text"><code>var arr = [1,2,3,4,5,6];
+var arr2 = arr.every(function(x){
+  return x &lt; 10;
+});
+console.log(arr2); // true
+var arr3 = arr.every(function(x){
+  return x &lt; 3;
+});
+console.log(arr3); // false
+</code></pre><h4 id="_14-some"><a href="#_14-some" aria-hidden="true" class="header-anchor">#</a> 14. some()</h4><p>some()：判断数组中是否存在满足条件的项，只要有一项满足条件，就会返回true。</p><pre class="language-text"><code>var arr = [1,2,3,4,5,6];
+var arr2 = arr.some(function(x){
+  return x &lt; 3;
+});
+console.log(arr2); // true
+var arr3 = arr.every(function(x){
+  return x &lt; 1;
+});
+console.log(arr3); // false
+</code></pre><h4 id="_15-reduce-和reduceright"><a href="#_15-reduce-和reduceright" aria-hidden="true" class="header-anchor">#</a> 15. reduce()和reduceRight()</h4><p>这两个方法都会实现迭代数组的所有项，然后构建一个最终返回的值。
+<br>
+reduce()方法从数组的第一项开始，逐个遍历到最后。而 reduceRight()则从数组的最后一项开始，向前遍历到第一项。
+<br>
+这两个方法都接收两个参数：一个在每一项上调用的函数和（可选的）作为归并基础的初始值。
+<br>
+传给 reduce()和 reduceRight()的函数接收 4 个参数：前一个值、当前值、项的索引和数组对象。这个函数返回的任何值都会作为第一个参数自动传给下一项。第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，第二个参数就是数组的第二项。
+<br>
+下面代码用reduceRight()实现数组求和，数组一开始加了一个初始值10。</p><pre class="language-text"><code>var values = [1,2,3,4,5];
+var sum = values.reduceRight(function(prev,cur,index,array){
+  return prev + cur;
+},10);
+console.log(sum); // 25
+</code></pre><h2 id="三、检测数组"><a href="#三、检测数组" aria-hidden="true" class="header-anchor">#</a> 三、检测数组</h2><p>对于单一的全局执行环境而言，使用instanceof操作符就可以检测是否为数组，例如：</p><pre class="language-text"><code>var arr = new Array(&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;);
+console.log(arr instanceof Array); // true
+</code></pre><p>但如果网页中包含多个框架，也就包含多个全局执行环境，则使用Array.isArray()方法来确定某个值是否为数组，而不管它是在哪个全局环境中被创建的。如下：</p><pre class="language-text"><code> if(Array.isArray(arr)){
+   // 执行某些操作
+ }
+</code></pre><p>每个对象都具有toLocaleString()、toString()和valueof()方法。调用数组的toString()方法会返回数组中每个值的字符串形式拼接而成并且以逗号分隔的字符串，调用数组的valueof()方法返回的还是数组，实际上调用的是数组每一项的toString()方法，如下：</p><pre class="language-text"><code> var arr = [&quot;red&quot;,&quot;blue&quot;,&quot;green&quot;];
+ console.log(arr.toString()); // red,blue,green
+ console.log(arr.valueOf()); // [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]
+ console.log(arr); // [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]
+</code></pre><p>而调用数组的toLocaleString()方法，与toString()不同的是它会调用数组每一项的toLocaleString()方法，将每一项toLocaleString()方法的返回值以逗号分隔拼接成一个字符串。而使用join()方法，可以使用不同的分隔符来构建这个字符串，如下：</p><pre class="language-text"><code> var arr = [&quot;red&quot;,&quot;blue&quot;,&quot;green&quot;];
+ console.log(arr.toLocaleString()); // red,blue,green
+ console.log(arr.join(',')); // red,blue,green
+</code></pre><h2 id="四、伪数组"><a href="#四、伪数组" aria-hidden="true" class="header-anchor">#</a> 四、伪数组</h2><h4 id="伪数组的定义"><a href="#伪数组的定义" aria-hidden="true" class="header-anchor">#</a> 伪数组的定义</h4><ol><li>拥有length属性，其它属性（索引）为非负整数（对象中的索引会被当作字符串来处理，这里你可以当做是个非负整数串来理解）</li><li>不具有数组所具有的方法</li></ol><p>常见的参数的参数arguments，DOM对象列表（比如通过document.getElementsByTags得到的列表），jQuery对象（比如$('div'）都是伪数组。
+<br></p><blockquote><p>伪数组，就是像数组一样有length属性，也有0，1，2，3等属性的对象，看起来就像数组一样，但不是数组。
+<br>
+伪数组是一个Object，而真实的数组是一个Array。</p></blockquote><h4 id="伪数组转数组的方法"><a href="#伪数组转数组的方法" aria-hidden="true" class="header-anchor">#</a> 伪数组转数组的方法</h4><ol><li>方法一：遍历伪数组，再把值push进空数组中</li><li>方法二：声明一个空数组，通过遍历伪数组把它们重新添加到新的数组中（与方法一类似）</li></ol><pre class="language-text"><code>&lt;li&gt;1&lt;/li&gt;
+&lt;li&gt;2&lt;/li&gt;
+&lt;li&gt;3&lt;/li&gt;
+&lt;li&gt;4&lt;/li&gt;
+</code></pre><pre class="language-text"><code>var aLi = document.querySelectorAll('li');
+var arr = [];
+for (var i = 0; i &lt; aLi.length; i++){
+  arr[arr.length] = aLi[i].innerHTML;
+}
+console.log(arr); // [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;]
+</code></pre><ol start="3"><li>方法三：使用ES6中数组的新方法Array.from()</li></ol><pre class="language-text"><code>  function test(){
+    var arg = Array.from(arguments);
+    arg.push(5);
+    console.log(arg); // [1, 2, 3, 4, 5]
+  }
+  test(1,2,3,4)
+</code></pre><ol start="4"><li>方法四：使用Array.prototype.slice.call()或者[].slice.call()</li></ol><pre class="language-text"><code>var arr = Array.prototype.slice.call({
+  0:&quot;like&quot;,
+  1:12,
+  2:true,
+  length:3
+});
+ console.log(arr); // [&quot;like&quot;, 12, true]
+</code></pre></div></div></div><div class="v-card__actions"><div class="flex xs12"><a href="/blog/JavaScript"><span tabindex="0" class="v-chip capitalize chip-tag v-chip--label v-chip--small theme--light"><span class="v-chip__content">JavaScript
+            </span></span></a></div></div></article></div><div class="flex text-xs-left xs6"><!----></div><div class="flex text-xs-right xs6"><a href="/posts/es6-extends-static.html" class="post-nav v-btn v-btn--flat v-btn--router theme--light"><div class="v-btn__content"><div class="grey--text">Next
+                    <i class="fa ml-1 fa-chevron-right"></i></div><div class="title mt-1 primary--text hidden-xs-only title-font">ES6 关键字class、constructor、extends、static简介</div></div></a></div></div></div></div></main><button type="button" class="v-btn v-btn--bottom v-btn--floating v-btn--fixed v-btn--right theme--light accent" style="display:none;background:#3a8ee6 !important;"><div class="v-btn__content"><i class="fa fa-lg fa-chevron-up"></i></div></button></div></div></div>
+    <script src="/assets/js/app.d336fc99.js" defer></script><script src="/assets/js/18.3eda089e.js" defer></script>
+  </body>
+</html>
