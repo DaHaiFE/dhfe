@@ -23,7 +23,7 @@ Array对象用于在单个的变量中存储多个值。
 
   ```
   var arr4 = []; // 创建一个空数组
-  var arr5 = [10]; // 创建一个包含3项的数组`
+  var arr5 = [10]; // 创建一个包含10项的数组`
   var arr6 = ["张三","李四","王五"]; // 创建一个包含3个字符串的数组
   ```
 
@@ -113,13 +113,7 @@ console.log(arr2); // [13, 24, 3, 51] （原数组被改变）
 
 ```
 function compare(value1, value2) {
-  if(value1 < value2) {
-    return -1;
-  } else if (value1 > value2) {
-    return 1;
-  } else {
-    return 0;
-  }
+  return value1 - value2
 }
 arr2 = [13, 24, 51 ,3];
 console.log(arr2.sort(compare)); // [3, 13, 24, 51]
@@ -129,13 +123,7 @@ console.log(arr2.sort(compare)); // [3, 13, 24, 51]
 
 ```
 function compare(value1, value2) {
-  if(value1 < value2) {
-    return 1;
-  } else if (value1 > value2) {
-    return -1;
-  } else {
-    return 0;
-  }
+   return value2 - value1
 }
 arr2 = [13, 24, 51 ,3];
 console.log(arr2.sort(compare)); // [51, 24, 13, 3]
