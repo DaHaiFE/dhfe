@@ -1,0 +1,4 @@
+---
+layout: wxs
+title: Blog
+---

@@ -54,6 +54,8 @@
     import Css from './Css'
     import Hl from './Hl'
     import Performance from './Performance'
+    import Jst from './Jst'
+    import Wxs from './Wxs'
     import Security from './Security'
     import {pathToComponentName, updateMetaTags} from './libs/utils'
 
@@ -77,7 +79,9 @@
             Css,
             Hl,
             Performance,
-            Security
+            Security,
+            Jst,
+            Wxs
         },
         data() {
             const mobilePoint = 1264

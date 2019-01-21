@@ -1,7 +1,7 @@
 ---
 title: WXS脚本语言
 date: 2018-12-18
-tags: [小程序, wxs, js]
+tags: [Wxs, JavaScript]
 description: WXS脚本语言Weixin Script脚本的简称，是JS、JSON、WXML、WXSS之后又一大小程序内部文件类型。截至到目前小程序已经提供了5种文件类型。
 ---
 

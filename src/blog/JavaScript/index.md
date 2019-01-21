@@ -1,0 +1,4 @@
+---
+layout: jst
+title: Blog
+---
