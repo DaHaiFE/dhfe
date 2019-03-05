@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>element upload总结 · 大海前端团队 · 一群有趣有爱的人儿一起做有意义的事儿</title>
+    <meta name="description" content="可以同时上传多张图片，默认显示之前已经上传的图片列表，双击图片放大。">
+    <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3F51B5">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="content-type" content="no-cache, must-revalidate">
+  <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/192.png">
+  <meta name="msapplication-TileImage" content="/icons/192.png">
+  <meta name="msapplication-TileColor" content="#3F51B5">
+    
+    <link rel="preload" href="/assets/css/styles.387fa844.css" as="style"><link rel="preload" href="/assets/js/app.387fa844.js" as="script"><link rel="preload" href="/assets/css/styles.387fa844.css" as="style"><link rel="preload" href="/assets/js/23.b9a8b47c.js" as="script"><link rel="prefetch" href="/assets/js/1.5b364de8.js"><link rel="prefetch" href="/assets/js/10.2565cff3.js"><link rel="prefetch" href="/assets/js/11.d3bc7e9b.js"><link rel="prefetch" href="/assets/js/12.f910d2d7.js"><link rel="prefetch" href="/assets/js/13.9e579e95.js"><link rel="prefetch" href="/assets/js/14.7f493af7.js"><link rel="prefetch" href="/assets/js/15.0cfa9757.js"><link rel="prefetch" href="/assets/js/16.65ffa8f2.js"><link rel="prefetch" href="/assets/js/17.e5534480.js"><link rel="prefetch" href="/assets/js/18.37ebb09d.js"><link rel="prefetch" href="/assets/js/19.72d9ba07.js"><link rel="prefetch" href="/assets/js/2.d3b63d93.js"><link rel="prefetch" href="/assets/js/20.3b54739f.js"><link rel="prefetch" href="/assets/js/21.03011cf5.js"><link rel="prefetch" href="/assets/js/22.9b00067f.js"><link rel="prefetch" href="/assets/js/24.f6cd9984.js"><link rel="prefetch" href="/assets/js/25.5a86e0ba.js"><link rel="prefetch" href="/assets/js/3.6e90c788.js"><link rel="prefetch" href="/assets/js/4.840fd55a.js"><link rel="prefetch" href="/assets/js/5.60e6dacd.js"><link rel="prefetch" href="/assets/js/6.56aafec8.js"><link rel="prefetch" href="/assets/js/7.3187166b.js"><link rel="prefetch" href="/assets/js/8.1384a8cb.js"><link rel="prefetch" href="/assets/js/9.ab23ab25.js">
+    <link rel="stylesheet" href="/assets/css/styles.387fa844.css"><link rel="stylesheet" href="/assets/css/styles.387fa844.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div data-app="true" id="app" class="application theme--light"><div class="application--wrap"><div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="v-progress-linear blog-progress" style="height:3px;display:none;"><div class="v-progress-linear__background accent" style="height:3px;opacity:0.4;width:100%;"></div><div class="v-progress-linear__bar"><!----><div class="v-progress-linear__bar__determinate accent" style="width:0%;"></div></div></div><aside class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0px;max-height:calc(100% - 0px);transform:translateX(-240px);width:240px;"><div><div class="aside-brand-wrap" style="display:;"><div class="aside-brand"><a href="/" class="aside-avatar elevation-2 router-link-active"><img src="/face.jpg" alt="avatar"></a><hgroup class="mt-3 variant-hide"><div class="subheading white--text">大海前端团队-DHFE</div><a href="javacript:void(0)" title="有爱有趣" class="aside-mail primary--text text--lighten-5">有爱有趣</a></hgroup></div></div><hr class="v-divider theme--dark"><div role="list" class="v-list nav-list theme--light"><div role="listitem" class="secondary--text"><a href="/blog" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-tag"></i></div></div><div class="v-list__tile__content">Blog</div></a></div><div role="listitem" class="secondary--text"><a href="https://github.com/DahaiFE/dhfe" target="_blank" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fab fa-github"></i></div></div><div class="v-list__tile__content">Github</div></a></div><div role="listitem" class="secondary--text"><a href="/about" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-user-secret"></i></div></div><div class="v-list__tile__content">About</div></a></div><div role="listitem" class="secondary--text"><a href="/join" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-users"></i></div></div><div class="v-list__tile__content">Join</div></a></div></div></div><div class="v-navigation-drawer__border"></div></aside><main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><div class="v-content__wrap"><div class="container blog-container grid-list-xl align-center"><div class="layout row wrap"><div class="flex mb-3 xs12"><article class="mb-lay v-card v-sheet theme--light elevation-2 elevation-16 post-card"><div class="v-card__title"><div class="flex xs12"><h2 class="display-1 mb-3">element upload总结</h2><div class="post-meta"><time datetime="2019-01-28T00:00:00.000Z" class="secondary--text post-time">2019年01月28日</time></div></div></div><div class="v-card__text pt-0 pb-0"><div class="flex xs12"><div class="content custom"><p>同时上传多张图片，默认显示之前已经上传的图片列表，双击图片放大等功能。
+
+我在开发图片上传功能时遇到几个问题，现在总结如下：</p><p>1.上传图片参数</p><p>2.上传图片获取不同的上传地址</p><p>3.上传图片报错</p><p>4.显示已经上传的图片。</p><p>5.保存上传图片传参给后端。</p><p>6.删除图片功能。</p><p>7.图片放大功能</p><p>希望开发类似功能的同事避免一些开发前没想到的问题。</p><h2 id="_1-上传图片参数"><a href="#_1-上传图片参数" aria-hidden="true" class="header-anchor">#</a> 1.上传图片参数</h2><pre class="language-text"><code>&lt;el-upload&gt;
+  class=&quot;upload-demo&quot; //自定义样式
+  ref=&quot;exercises-pics&quot; //ref 用了被用来给DOM元素或直接操作DOM元素。注意：vue直接操作DOM就必须用ref 属性进行注册
+  :action=&quot;uploadApi&quot; //图片上传地址
+  :data=&quot;uploadData&quot;  //上传图片所传参数。
+  :on-success=&quot;examSuccess&quot;//文件上传成功时的钩子
+  :before-upload=&quot;beforeUpload&quot;//上传文件之前的钩子成功失败都会调用
+  :on-preview=&quot;handlePreview&quot; // 点击文件列表中已上传的文件时的钩子 图片放大时用到。
+  :on-remove=&quot;handleRemove&quot; // 删除文件列表时调用的函数钩子。
+  :multiple=&quot;true&quot; //支持多选文件
+  :on-exceed=&quot;handleLimit&quot; //文件超出个数限制的钩子
+  list-type=&quot;picture&quot; //文件列表类型
+  :file-list=&quot;upForm.exam_pics&quot; // 上传的文件列表
+  &lt;el-button size=&quot;small&quot; type=&quot;primary&quot; class=&quot;upBtn&quot;&gt;上传试卷图片&lt;/el-button&gt;
+&lt;/elupload&gt;
+</code></pre><p>js代码</p><pre class="language-text"><code>const ACCESS_TOKEN =some.access_token : ''
+export default {
+ return {
+   uploadApi: '',
+   upForm: {
+     exam_pics: []
+   },
+   uploadData: {
+     project: 'crm',
+     business: 'exam_paper',
+     access_token: ACCESS_TOKEN
+   }
+  },
+  methods: {
+</code></pre><p>最多上传图片数</p><pre class="language-text"><code>    handleLimit(file,fileList) {
+      this.overForm('最多上传10张图片', 1)
+    },
+</code></pre><p>上传文件之前调用的函数，可设置上传图片大小和格式</p><pre class="language-text"><code>     beforeUpload(file) {
+       const isType = file.type
+       const isLt5M = file.size / 1024 &lt; 5120
+       if (isType !== 'image/jpeg' &amp;&amp; isType !== 'image/png') {
+         this.$message.error('上传图片只能是 jpg/png 格式!')
+         return false
+       } else if (!isLt5M) {
+         this.$message.error('上传图片大小不能超过 5M!')
+         return false
+       }
+     }
+    },
+</code></pre><p>点击某一个图片放大该图片</p><pre class="language-text"><code>    handlePreview(file) {
+      window.open(file.response.result[0])
+    },
+</code></pre><p>图片上传成功调用的函数</p><pre class="language-text"><code>    examSuccess(response, file, fileList) {
+      if (response.status === 1) {
+        for (let i = 0; i &lt; response.result.length; i++) {
+          if(response.result[i].indexOf(&quot;http&quot;) !=-1){
+            this.upForm.exam_pics.push(response.result[0])
+          }
+        }
+       } else {
+         this.$message({
+           message: response.message
+        })
+       }
+     }
+</code></pre><p>删除文件列表时调用的函数钩子。</p><pre class="language-text"><code> handleRemove(file, fileList) {
+   let picture = this.upForm.exam_pics.filter((item, index, arr) =&gt; {
+     return item !== file.response.result[0]
+   })
+   this.upForm.exam_pics = picture
+ },
+}
+},
+</code></pre><p>接下来写下在整个开发中遇到的问题，出现问题的原因，及解决方案</p><h2 id="_2-上传图片获取不同的上传地址"><a href="#_2-上传图片获取不同的上传地址" aria-hidden="true" class="header-anchor">#</a> 2.上传图片获取不同的上传地址</h2><p>问题：,每个环境下对应不同图片上传地址，不同的环境需要修改一次代码太麻烦啦！</p><p>解决方案：asynData 方法能够在渲染组件之前异步获取数据，env属性能够获取nuxt.config.js 中配置的环境变量，所以我们在nuxt.dev.config.js中配置了以下地址</p><pre class="language-text"><code> env: {testPaperAnalysisUpload: '//some.domain.com/upload/localfile'}
+</code></pre><p>在nuxt.prod.config.js中配置了以下地址</p><pre class="language-text"><code> env: {testPaperAnalysisUpload: '//some.domain.com/upload/localfile'}
+</code></pre><p>这样我们就可以通过asyncData函数的env属性动态获取不同环境下的上传地址啦,代码如下：。</p><pre class="language-text"><code>  asyncData({env}) {
+    return {uploadApi: env.testPaperAnalysisUpload}
+  }
+}
+</code></pre><p>写到这里，我以为上传的代码已经开发完然而却又遇到下面问题</p><h2 id="_3-上传图片报错"><a href="#_3-上传图片报错" aria-hidden="true" class="header-anchor">#</a> 3.上传图片报错</h2><p>问题：页面直接报错uid is not a function,图片上传失败</p><p>原因：:file-list=&quot;upForm.exam_pics&quot; file-list是一个对象数组，并且默认需要图片uid，而examSuccess()函数中upForm.exam_pics是一个</p><p>数组，没有uid这个值，并且后台也只关心图片存储地址，所以只能返回图片地址，从后台是没法拿到uid值。</p><p>解决方:：直接去掉:<el-upload></el-upload>组件中的:file-list=&quot;upForm.exam_pics，在试着上传发现可以上传成功了。</p><h2 id="_4-显示已经上传的图片。"><a href="#_4-显示已经上传的图片。" aria-hidden="true" class="header-anchor">#</a> 4.显示已经上传的图片。</h2><p>问题：再次进入页面，之前上传的图片缩略图并未显示出来。</p><p>原因：因为去掉了组件中:file-list=&quot;upForm.exam_pics&quot; 没了这个属性那图片当然就展示不出来了。</p><p>解决方案：上传图片时给upForm.exam_pics()添加uid属性。examSuccess方法改为：</p><pre class="language-text"><code>examSuccess(response, file, fileList) {
+      if (response.status === 1) {
+        for (let i = 0; i &lt; response.result.length; i++) {
+          if(response.result[i].indexOf(&quot;http&quot;) !=-1){
+            this.upForm.exam_pics.push({
+            url: response.result[0],
+            uid: 'id'+i
+            })
+            }
+          }
+        }
+       } else {
+         this.$message({
+           message: response.message
+        })
+       }
+     }
+这样上传就不会报错了。
+</code></pre><h2 id="_5-保存上传图片传参给后端"><a href="#_5-保存上传图片传参给后端" aria-hidden="true" class="header-anchor">#</a> 5.保存上传图片传参给后端</h2><p>问题：传值失败</p><p>原因：后台需要的参数是数组，不是对象，我需要的是一个对象而后台返回数组</p><p>解决方案:把后台返回数组转为对象，在给后台传值时把对象在转为数组，方法如下:</p><p>对象转数组在给后台传参是调用</p><pre class="language-text"><code>let split = (which) =&gt; {
+  return which.map((i) =&gt; i.url)
+}
+
+</code></pre><p>数组转对象在接收后台返回图片列表时调用</p><pre class="language-text"><code> let join = (origin) =&gt; {
+  return origin.map(i =&gt; ({url: i}))
+ }
+
+</code></pre><h2 id="_6-删除图片功能。"><a href="#_6-删除图片功能。" aria-hidden="true" class="header-anchor">#</a> 6.删除图片功能。</h2><p>问题：删除某张图片时，页面又报错Uncaught TypeError: this.upForm.exam_pics.files.filter is not a function，删除图片失败。</p><p>在看之前写的删除方法</p><pre class="language-text"><code> handleRemove(file, fileList) {
+   let picture = this.upForm.exam_pics.filter((item, index, arr) =&gt; {
+     return item !== file.response.result[0]
+   })
+   this.upForm.exam_pics = picture
+ }
+
+</code></pre><p>原因：通过filter()是一个数组方法，通过之前的数组转对象方法，当前的this.upForm.exam_pics是一个对象，所以删除方法报错</p><p>解决方案如下：</p><pre class="language-text"><code>handleRemove(file, fileList) {
+  let picture = this.upForm.exam_pics.filter(val =&gt; {
+    return val.url !== file.response.result[0]
+  })
+  this.upForm.exam_pics = this.upForm.exam_pics.push(picture)
+}
+再次测试删除，显示之前保存的缩略图都可以正常显示啦
+</code></pre><h2 id="_7-图片放大功能"><a href="#_7-图片放大功能" aria-hidden="true" class="header-anchor">#</a> 7.图片放大功能</h2><p>问题：测试图片放大功能，却发现点击无效。</p><p>原因：图片上未绑定点击预览功能</p><p>解决方案：升级element组件库,给图片绑定点击预览功能。</p></div></div></div><div class="v-card__actions"><div class="flex xs12"><a href="/blog/JavaScript"><span tabindex="0" class="v-chip capitalize chip-tag v-chip--label v-chip--small theme--light"><span class="v-chip__content">JavaScript
+            </span></span></a></div></div></article></div><div class="flex text-xs-left xs6"><!----></div><div class="flex text-xs-right xs6"><a href="/posts/js-array-conclusion.html" class="post-nav v-btn v-btn--flat v-btn--router theme--light"><div class="v-btn__content"><div class="grey--text">Next
+                    <i class="fa ml-1 fa-chevron-right"></i></div><div class="title mt-1 primary--text hidden-xs-only title-font">JS数组方法总结</div></div></a></div></div></div></div></main><button type="button" class="v-btn v-btn--bottom v-btn--floating v-btn--fixed v-btn--right theme--light accent" style="display:none;background:#3a8ee6 !important;"><div class="v-btn__content"><i class="fa fa-lg fa-chevron-up"></i></div></button></div></div></div>
+    <script src="/assets/js/app.387fa844.js" defer></script><script src="/assets/js/23.b9a8b47c.js" defer></script>
+  </body>
+</html>
