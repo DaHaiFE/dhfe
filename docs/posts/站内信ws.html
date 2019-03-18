@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>那些年我们接过的webSocket · 大海前端团队 · 一群有趣有爱的人儿一起做有意义的事儿</title>
+    <meta name="description" content="站内信是底层的通用系统之一，其主要功能是在web上为用户提供即时的消息通知，目前仅支持系统发出的通知，如客服点击发货后，对应的需要知道这条通知的用户在系统内会收到一条消息通知。目前该功能暂不支持用户向系统或其他用户发送聊天消息。此外，这也是本人第一次将ws用于生产环境，如果有任何不足之处欢迎批评指正。">
+    <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3F51B5">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="content-type" content="no-cache, must-revalidate">
+  <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/192.png">
+  <meta name="msapplication-TileImage" content="/icons/192.png">
+  <meta name="msapplication-TileColor" content="#3F51B5">
+    
+    <link rel="preload" href="/assets/css/styles.3558a2b6.css" as="style"><link rel="preload" href="/assets/js/app.3558a2b6.js" as="script"><link rel="preload" href="/assets/css/styles.3558a2b6.css" as="style"><link rel="preload" href="/assets/js/26.684e3766.js" as="script"><link rel="prefetch" href="/assets/js/1.79478e12.js"><link rel="prefetch" href="/assets/js/10.8df94efa.js"><link rel="prefetch" href="/assets/js/11.ebd8f9f4.js"><link rel="prefetch" href="/assets/js/12.3094fa1d.js"><link rel="prefetch" href="/assets/js/13.b7d9aa96.js"><link rel="prefetch" href="/assets/js/14.2d50371c.js"><link rel="prefetch" href="/assets/js/15.0cfa9757.js"><link rel="prefetch" href="/assets/js/16.d59fc4a2.js"><link rel="prefetch" href="/assets/js/17.3fc0349c.js"><link rel="prefetch" href="/assets/js/18.13009117.js"><link rel="prefetch" href="/assets/js/19.a19d37f7.js"><link rel="prefetch" href="/assets/js/2.3778ae49.js"><link rel="prefetch" href="/assets/js/20.1d0c54fe.js"><link rel="prefetch" href="/assets/js/21.67dfd1c8.js"><link rel="prefetch" href="/assets/js/22.4af05f9f.js"><link rel="prefetch" href="/assets/js/23.6c87a555.js"><link rel="prefetch" href="/assets/js/24.c132c47b.js"><link rel="prefetch" href="/assets/js/25.2f2de2be.js"><link rel="prefetch" href="/assets/js/3.4bca3246.js"><link rel="prefetch" href="/assets/js/4.ca10eadc.js"><link rel="prefetch" href="/assets/js/5.98833a75.js"><link rel="prefetch" href="/assets/js/6.ffad962e.js"><link rel="prefetch" href="/assets/js/7.095dbb35.js"><link rel="prefetch" href="/assets/js/8.5bcd5554.js"><link rel="prefetch" href="/assets/js/9.b035af40.js">
+    <link rel="stylesheet" href="/assets/css/styles.3558a2b6.css"><link rel="stylesheet" href="/assets/css/styles.3558a2b6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div data-app="true" id="app" class="application theme--light"><div class="application--wrap"><div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="v-progress-linear blog-progress" style="height:3px;display:none;"><div class="v-progress-linear__background accent" style="height:3px;opacity:0.4;width:100%;"></div><div class="v-progress-linear__bar"><!----><div class="v-progress-linear__bar__determinate accent" style="width:0%;"></div></div></div><aside class="v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--light" style="height:100%;margin-top:0px;max-height:calc(100% - 0px);transform:translateX(-240px);width:240px;"><div><div class="aside-brand-wrap" style="display:;"><div class="aside-brand"><a href="/" class="aside-avatar elevation-2 router-link-active"><img src="/face.jpg" alt="avatar"></a><hgroup class="mt-3 variant-hide"><div class="subheading white--text">大海前端团队-DHFE</div><a href="javacript:void(0)" title="有爱有趣" class="aside-mail primary--text text--lighten-5">有爱有趣</a></hgroup></div></div><hr class="v-divider theme--dark"><div role="list" class="v-list nav-list theme--light"><div role="listitem" class="secondary--text"><a href="/blog" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-tag"></i></div></div><div class="v-list__tile__content">Blog</div></a></div><div role="listitem" class="secondary--text"><a href="https://github.com/DahaiFE/dhfe" target="_blank" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fab fa-github"></i></div></div><div class="v-list__tile__content">Github</div></a></div><div role="listitem" class="secondary--text"><a href="/about" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-user-secret"></i></div></div><div class="v-list__tile__content">About</div></a></div><div role="listitem" class="secondary--text"><a href="/join" class="v-list__tile v-list__tile--link theme--light"><div class="v-list__tile__avatar"><div class="v-avatar" style="height:40px;width:40px;"><i class="fa fa-users"></i></div></div><div class="v-list__tile__content">Join</div></a></div></div></div><div class="v-navigation-drawer__border"></div></aside><main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><div class="v-content__wrap"><div class="container blog-container grid-list-xl align-center"><div class="layout row wrap"><div class="flex mb-3 xs12"><article class="mb-lay v-card v-sheet theme--light elevation-2 elevation-16 post-card"><div class="v-card__title"><div class="flex xs12"><h2 class="display-1 mb-3">那些年我们接过的webSocket</h2><div class="post-meta"><time datetime="2018-03-08T00:00:00.000Z" class="secondary--text post-time">2018年03月08日</time></div></div></div><div class="v-card__text pt-0 pb-0"><div class="flex xs12"><div class="content custom"><p>站内信是底层的通用系统之一，其主要功能是在web上为用户提供即时的消息通知，目前仅支持系统发出的通知，如客服点击发货后，对应的需要知道这条通知的用户在系统内会收到一条消息通知。目前该功能暂不支持用户向系统或其他用户发送聊天消息。此外，这也是本人第一次将ws用于生产环境，如果有任何不足之处欢迎批评指正。
+</p><h1 id="那些年我们接过的websocket"><a href="#那些年我们接过的websocket" aria-hidden="true" class="header-anchor">#</a> 那些年我们接过的webSocket</h1><p>我们的管理后台的站内信已经投入使用有一段时间，今天给大家扒一把源代码。</p><p>本文不讨论ws是什么，也不讨论轮询、长连接与websocket的区别，这些在网络上屡见不鲜，如果年你还不知道ws是什么，那么赶紧去求助搜索引擎吧。等搞懂本段前面的内容再来看向下看吧。</p><p>首先呢给大家介绍一下我们的站内信系统。站内信是底层的通用系统之一，其主要功能是在web上为用户提供即时的消息通知，目前仅支持系统发出的通知，如客服点击发货后，对应的需要知道这条通知的用户在系统内会收到一条消息通知。目前该功能暂不支持用户向系统或其他用户发送聊天消息。此外，这也是本人第一次将ws用于生产环境，如果有任何不足之处欢迎批评指正。</p><p>本文内容提要：</p><ul><li>建立ws连接</li><li>主动断开ws</li><li>在https协议下</li><li>心跳同步与断开重连</li><li>导出已function而非object</li><li>完整示例</li></ul><h2 id="建立ws连接"><a href="#建立ws连接" aria-hidden="true" class="header-anchor">#</a> 建立ws连接</h2><h3 id="获得ws的实例"><a href="#获得ws的实例" aria-hidden="true" class="header-anchor">#</a> 获得WS的实例</h3><p>浏览器内置了WebSocket类型，建立连接只需要获得WebSocket的实例即可建立连接，在实例化的过程中传入服务端提供ws服务的接口（ip或者链接）。</p><pre class="language-text"><code>let ws = new WebScoket(url)
+</code></pre><h3 id="ws实例的部分事件"><a href="#ws实例的部分事件" aria-hidden="true" class="header-anchor">#</a> ws实例的部分事件</h3><ul><li>open 事件</li></ul><p>一旦服务器响应了WebSocket连接请求，open事件触发并建立一个连接。open事件对应的回调函数称作onopen。本例中，我们在成功建立连接后向服务端发送了一些用户的信息，这些信息用来注册消息服务。</p><pre class="language-text"><code>  ws.onopene = () =&gt; {
+       let {readyState} = ws
+          if (+readyState === 1) {
+            time = 0
+          }
+          let d = {
+            cmd: &quot;kkk&quot;,
+            system: xx,
+            access_token: ACCESS_TOKEN
+          }
+          let dStr = JSON.stringify(d)
+          console.log('webSocket-Connection-established')
+          ws.send(dStr)
+    }
+
+</code></pre><ul><li>readyState属性 与 readyStateChange事件</li></ul><p>与ajax相似，ws实例通过readyState属性表示当前链接状态，并且当readyState发生变更时会触发readyStateChange事件，ws实例注册该事件的handler函数为onreadyStateChange属性。</p><pre><code>+ 0 ：对应常量CONNECTING (numeric value 0)，
+  正在建立连接连接，还没有完成。The connection has not yet been established.
++ 1 ：对应常量OPEN (numeric value 1)，
+  连接成功建立，可以进行通信。The WebSocket connection is established and communication is possible.
++ 2 ：对应常量CLOSING (numeric value 2)
+  连接正在进行关闭握手，即将关闭。The connection is going through the closing handshake.
++ 3 : 对应常量CLOSED (numeric value 3)
+  连接已经关闭或者根本没有建立。The connection has been closed or could not be opened.
+</code></pre><ul><li>message 事件</li></ul><p>WebSocket消息包含来自服务器的数据。message事件在接收到消息时触发，对应于该事件的回调函数是onmessage。和ajax不同的是，ws获取的数据将会自动传入到回调的handler中。如果你需要在收到消息后做一些处理，例如本例子中，我们收到消息后需要调用消息通知弹窗，并且更新store中的未读消息数量。</p><pre class="language-text"><code>ws.onmessage = (e) =&gt; {
+  // 更新store
+  // 弹窗提示
+  // 后面有完整示例
+}
+</code></pre><ul><li>error 事件</li></ul><p>error事件在响应意外故障的时候触发。与该事件对应的回调函数为onerror。错误还会导致WebSocket连接关闭。如果你接收一个error事件，可以预期很快就会触发close事件。close事件中的代码和原因有时候能告诉你错误的根源。error事件处理程序是调用服务器重连逻辑以及处理来自WebSocket对象的异常的最佳场所。</p><ul><li>close事件</li></ul><p>close事件在WebSocket连接关闭时触发。对应于close事件的回调函数是onclose。一旦连接关闭，客户端和服务器不再能接收或者发送消息。</p><h2 id="客户端主动断开ws"><a href="#客户端主动断开ws" aria-hidden="true" class="header-anchor">#</a> 客户端主动断开ws</h2><p>前面我们陈述了如何建立ws连接，但在实际场景中很多时候都需要我们主动断开连接。例如用户退出登录后，我们需要告知服务端用户下线了，不必再推送消息了。</p><p>ws内置了主动断开的方法——close方法，注意，和dom事件不用，在dom事件中如果需要直接调用dom的click事件处理函数，我们可以通过dom.onclick()的方式，但是ws直接调用ws.onclose()是无效的。只能调用close方法</p><pre class="language-text"><code>ws.close() // 主动断开ws
+</code></pre><h2 id="在https协议下使用ws"><a href="#在https协议下使用ws" aria-hidden="true" class="header-anchor">#</a> 在https协议下使用ws</h2><p>在http协议中，我们使用的ws://ur的方式建立连接，但是如果页面使用的是https，而websocket使用ws协议将会触发错误导致连接失败。正确的开启方式是使用wss://url的方式建立连接。如果需要兼http和https两种方式，你可以使用以下方式：</p><pre class="language-text"><code>const IS_HTTPS = document.location.protocol.includes('https')
+let wsProtocol = IS_HTTPS ? 'wss://' : 'ws://'
+</code></pre><h2 id="心跳同步与断开重连"><a href="#心跳同步与断开重连" aria-hidden="true" class="header-anchor">#</a> 心跳同步与断开重连</h2><p>websocket在建立连接后，可能会因为网络抖动或者长时间没有操作而断开连接。
+通常解决这些问题的方案有以下方法，</p><ul><li>心跳同步</li><li>断开重连</li><li>二者结合</li></ul><p>心跳同步，顾名思义，和客户端倒计时心跳同步原理相同，间隔一定的的时间主动向服务器发送一些数据，以此保持存活状态。</p><p>断开重连，在上面介绍事件时已经提及过这个解决方案，当ws因为异常中断时会触发error事件，前端收到error会断开ws，进而触发close行为。</p><p>于是，我们监听了error事件，并且在其中重启ws，这里说重启是个不大恰当的行为，所谓重启是新建一个新的WebScoket实例，而事实上前一个实例已经无法再次使用。</p><p>我们使用断开重连的方式，除非特殊要求，我个人认为没有必要增加额外的性能开销去主动维持连接，反而应该采用被动的方式维护，一旦断开，前端即刻重启连接。</p><p>这里还有一点需要注意，如果断开是偶然的，那么重连即可成功，若服务端发生了严重错误，导致无法提供ws服务，那么不断的尝试是没有意义的。所以在这里我们还设置了尝试次数，当达到尝试上限时仍未能建立连接，我们就停止无效的尝试。</p><h2 id="导出一个函数"><a href="#导出一个函数" aria-hidden="true" class="header-anchor">#</a> 导出一个函数</h2><p>在设计这个ws模块之初，我的确是导出了一个对象的。但是后来考虑到代码的可扩展性，受到纯函数思想的启发，我又将其改造成了一个函数，但这个模块还算不上纯函数，但是为了适（懒）应（惰）现有的业务场景，其中还掺杂了一些业务。但是如果一定要改成纯函数，也是很快的。
+这里给大家留一个思考题，大家可以尝试如何将更新未读消息、点击跳转抽离出来？
+回归正题，改造成函数相比对象带来的改变如下：</p><ul><li>代码更专注ws连接管理；</li><li>以参数形式开放模块的入口，增强代码的可扩展性；举一个简单的例子，如果后期需要区分开发、测试、线上的ws连接，只需要增加一个ENV的参数；</li><li>增强模块使用者的自由度，使用者可以选择在需要的时候调用方法创建ws服务，而不是一旦导入就执行创建ws服务；</li></ul><h2 id="完整代码"><a href="#完整代码" aria-hidden="true" class="header-anchor">#</a> 完整代码</h2><pre class="language-text"><code>export const inlineWebSocket = (that, ACCESS_TOKEN) =&gt; {
+  let host = document.location.host
+  const IS_HTTPS = document.location.protocol.includes('https')
+  let wsProtocol = IS_HTTPS ? 'wss://' : 'ws://'
+  let url = `${wsProtocol}${host}`
+  let time = 0 //  重连次数
+  let socket = {
+    init() {
+      // ws initialize
+      this.wsUri = url
+      this.webscoket = new WebSocket(url)
+      this.webscoket.onopen = (evt) =&gt; {
+        let {readyState} = this.webscoket
+        if (+readyState === 1) {
+          time = 0
+        }
+        let d = {
+          cmd: &quot;rgb&quot;,
+          system: 77, //
+          access_token: ACCESS_TOKEN
+        }
+        let dStr = JSON.stringify(d)
+        console.log('webSocket-Connection-established')
+        this.webscoket.send(dStr)
+      }
+      this.webscoket.onreadyStateChange = () =&gt; {
+        console.log(this.webscoket.readyState)
+      }
+
+      this.webscoket.onclose = () =&gt; {
+        console.log('webSocket close')
+        if (time &gt;= 3) {
+          return false
+        } else {
+          time++
+          this.init()
+        }
+      }
+
+      this.webscoket.onmessage = (e) =&gt; {
+        let isString = typeof e.data === 'string'
+        let d = isString ? JSON.parse(e.data) : e.data
+        that.updateUnreadMsgNum({payload}) // 更新未读消息数量
+        that.$internalNotify({// some options}) // 通知
+      }
+
+      this.webscoket.onerror = (e) =&gt; {
+        console.log('WebSocket has been shut down in accident,the following is the error emssage,please ask for technological support!!')
+        console.log('we are trying to reconnect')
+      }
+
+      return this
+    },
+    shutWebSocket() {
+      time = 3
+      this.webscoket.close()
+      return this
+    }
+  }
+
+  return socket
+}
+
+</code></pre></div></div></div><div class="v-card__actions"><div class="flex xs12"><a href="/blog/JavaScript"><span tabindex="0" class="v-chip capitalize chip-tag v-chip--label v-chip--small theme--light"><span class="v-chip__content">JavaScript
+            </span></span></a></div></div></article></div><div class="flex text-xs-left xs6"><a href="/posts/text-test.html" class="post-nav v-btn v-btn--flat v-btn--router theme--light"><div class="v-btn__content"><div class="grey--text"><i class="fa mr-1 fa-chevron-left"></i>Prev
+                </div><div class="title mt-1 primary--text hidden-xs-only title-font">程序猿生存指南</div></div></a></div><div class="flex text-xs-right xs6"><a href="/posts/http-ip-tcp.html" class="post-nav v-btn v-btn--flat v-btn--router theme--light"><div class="v-btn__content"><div class="grey--text">Next
+                    <i class="fa ml-1 fa-chevron-right"></i></div><div class="title mt-1 primary--text hidden-xs-only title-font">全面了解TCP/IP到HTTP</div></div></a></div></div></div></div></main><button type="button" class="v-btn v-btn--bottom v-btn--floating v-btn--fixed v-btn--right theme--light accent" style="display:none;background:#3a8ee6 !important;"><div class="v-btn__content"><i class="fa fa-lg fa-chevron-up"></i></div></button></div></div></div>
+    <script src="/assets/js/app.3558a2b6.js" defer></script><script src="/assets/js/26.684e3766.js" defer></script>
+  </body>
+</html>
