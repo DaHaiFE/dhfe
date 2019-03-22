@@ -1,5 +1,5 @@
 ---
-title: 基于vue-treeselect 地域组件封装
+title: 基于vue-treeselect 地域业务组件封装
 date: 2019-03-22
 tags: [JavaScript]
 description: 通用地区json引入方式，省市区展示方式修改，选择的地区标签部分区域点击禁止触发删除事件
@@ -13,6 +13,17 @@ description: 通用地区json引入方式，省市区展示方式修改，选择
 ##### 解决方案：
 a、将json文件文件改成js文件，var baseCitys  = {} 改用js引入方式，然后在项目里写了一个plugin。
 ```javascript
+utils.js
+export const mresolver = url => {
+    const mountTarget = (document.getElementsByTagName('head') || document.getElementsByTagName('head'))[0]
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.charset = 'utf-8'
+    script.async = true
+    script.src = url
+    mountTarget.appendChild(script)
+}
+
 在plugins文件夹里新建了一个city.js文件。
 // https://cdn.dahai.com/static/global/citys.js 为数据地址
 import Vue from 'vue'
